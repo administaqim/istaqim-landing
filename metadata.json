@@ -1,0 +1,6 @@
+{
+  "name": "Istaqim",
+  "description": "صفحة هبوط تطبيق استقم - دروس ومحاضرات وفتاوى وتلاوات لأهل السنة في مكان واحد.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
