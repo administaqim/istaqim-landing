@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+2"}
+# Istaqim
 
-# Run and deploy your AI Studio app
+Istaqim is a platform dedicated to serving students of Islamic knowledge through modern digital tools, organized educational resources, and a focused learning experience.
 
-This contains everything you need to run your app locally.
+The project aims to help seekers of knowledge access beneficial content more efficiently while maintaining simplicity, clarity, and ease of use.
 
-View your app in AI Studio: https://ai.studio/apps/0352e8cf-3507-4e5a-a728-d158f55a72ce
+## Website
 
-## Run Locally
+https://istaqim.app
 
-**Prerequisites:**  Node.js
+## Mission
 
+To facilitate the pursuit of Islamic knowledge by providing a modern platform that brings together educational resources, study tools, and scholarly content in a structured and accessible environment.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Technology Stack
+
+- React
+- TypeScript
+- Vite
+- Netlify
+
+## Development
+
+Install dependencies:
+
+bash npm install 
+
+Run the development server:
+
+bash npm run dev 
+
+Create a production build:
+
+bash npm run build 
+
+## Deployment
+
+This website is automatically deployed through Netlify whenever changes are pushed to the main branch of the repository.
+
+## License
+
+All rights reserved.
+
+The source code, visual assets, branding, and content associated with Istaqim are proprietary and may not be copied, distributed, modified, or reused without prior written permission.
+
+© Istaqim. All rights reserv
