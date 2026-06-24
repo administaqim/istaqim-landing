@@ -24,18 +24,19 @@ interface DownloadButtonProps {
 const AppStoreButton = ({ isDark }: DownloadButtonProps) => (
   <a 
     href="#download" 
-    className={`inline-flex items-center gap-3 px-5 sm:px-6 h-[58px] rounded-2xl border transition-all duration-200 md:hover:scale-[1.02] active:scale-95 group mb-1.5 sm:mb-0 shadow-lg ${
+    dir="rtl"
+    className={`flex items-center justify-center gap-4 px-5 w-full sm:w-[240px] h-[58px] rounded-[50px] border transition-all duration-200 md:hover:scale-[1.02] active:scale-95 group ${
       isDark 
-        ? "bg-[#1C1C1E] md:hover:bg-[#202C41] text-white border-[#647DA1]/15 shadow-black/10" 
-        : "bg-[#1A2B4C] md:hover:bg-[#111C33] text-white border-white/10 shadow-[#1A2B4C]/20"
+        ? "bg-[#1C1C1E] md:hover:bg-[#202C41] text-white border-[#647DA1]/15" 
+        : "bg-[#1A2B4C] md:hover:bg-[#111C33] text-white border-white/10"
     }`}
   >
     <svg className="w-8 h-8 text-white fill-current transition-transform duration-200 md:group-hover:scale-105" viewBox="0 0 24 24">
       <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.49-.62.72-1.16 1.87-1.01 2.98 1.12.09 2.27-.6 2.94-1.41z"/>
     </svg>
-    <div className="text-right flex flex-col items-start leading-[1.2]">
-      <span className="text-[9px] text-[#AABBD9] tracking-wider uppercase font-bold font-sans">تحميل للآيفون</span>
-      <span className="text-[14px] font-bold font-sans mt-0.5">App Store</span>
+    <div className="flex flex-col items-start leading-[1.2]">
+      <span className="text-[11px] text-[#AABBD9] font-sans mb-1">حمل التطبيق من</span>
+      <span className="text-[15px] font-bold font-sans">متجـر أبـل سـتور</span>
     </div>
   </a>
 );
@@ -43,20 +44,28 @@ const AppStoreButton = ({ isDark }: DownloadButtonProps) => (
 const GooglePlayButton = ({ isDark }: DownloadButtonProps) => (
   <a 
     href="#download" 
-    className={`inline-flex items-center gap-3 px-5 sm:px-6 h-[58px] rounded-2xl border transition-all duration-200 md:hover:scale-[1.02] active:scale-95 group mb-1.5 sm:mb-0 shadow-lg ${
+    dir="rtl"
+    className={`flex items-center justify-center gap-4 px-5 w-full sm:w-[240px] h-[58px] rounded-[50px] border transition-all duration-200 md:hover:scale-[1.02] active:scale-95 group ${
       isDark 
-        ? "bg-[#1C1C1E] md:hover:bg-[#202C41] text-white border-[#647DA1]/15 shadow-black/10" 
-        : "bg-[#1A2B4C] md:hover:bg-[#111C33] text-white border-white/10 shadow-[#1A2B4C]/20"
+        ? "bg-[#1C1C1E] md:hover:bg-[#202C41] text-white border-[#647DA1]/15" 
+        : "bg-[#1A2B4C] md:hover:bg-[#111C33] text-white border-white/10"
     }`}
   >
     <svg viewBox="0 0 24 24" className="w-6 h-6 text-white fill-current transition-transform duration-200 md:group-hover:scale-105" fill="currentColor">
       <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z" />
     </svg>
-    <div className="text-right flex flex-col items-start leading-[1.2]">
-      <span className="text-[9px] text-[#AABBD9] tracking-wider uppercase font-bold font-sans">تحميل للأندرويد</span>
-      <span className="text-[14px] font-bold font-sans mt-0.5">Google Play</span>
+    <div className="flex flex-col items-start leading-[1.2]">
+      <span className="text-[11px] text-[#AABBD9] font-sans mb-1">حمل التطبيق من</span>
+      <span className="text-[16px] font-bold font-sans">متجـر جوجـل بـلاي</span>
     </div>
   </a>
+);
+
+export const DownloadButtonsSection = ({ isDark }: DownloadButtonProps) => (
+  <div className="flex flex-col items-center gap-4">
+    <AppStoreButton isDark={isDark} />
+    <GooglePlayButton isDark={isDark} />
+  </div>
 );
 
 export default function App() {
@@ -85,7 +94,7 @@ export default function App() {
     }
     const formattedText = `السلام عليكم ورحمة الله وبركاته،\n\nأود تقديم [${messageType}] بخصوص تطبيق "استقم":\n\n*العنوان:* ${subject}\n\n*الرسالة:*\n${messageText}`;
     const encodedText = encodeURIComponent(formattedText);
-    window.open(`https://api.whatsapp.com/send?text=${encodedText}`, "_blank");
+    window.open(`https://wa.me/967773687374?text=${encodedText}`, "_blank");
   };
 
   return (
@@ -124,28 +133,56 @@ export default function App() {
           </nav>
 
           {/* Elegant Dark/Light Mode Switcher */}
-          <div>
-            <button 
-              onClick={toggleDarkMode}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-xs shadow-md transition-all duration-200 active:scale-95 ${
-                isDark 
-                  ? "bg-[#1C1C1E] hover:bg-stone-800 text-[#647DA1] shadow-stone-950/20 border border-stone-800" 
-                  : "bg-stone-100 hover:bg-stone-200 text-[#1A2B4C] border border-stone-200 shadow-sm"
-              }`}
-            >
-              {isDark ? (
-                <>
-                  
-                  <span className="text-[#EBEBF5]">جرِّب الوضع النهاري</span>
-                </>
-              ) : (
-                <>
-                 
-                  <span>جرِّب الوضع الليلي</span>
-                </>
-              )}
-            </button>
-          </div>
+         <div className="flex items-center">
+      <button
+        onClick={toggleDarkMode}
+        type="button"
+        aria-label="تغيير المظهر"
+        className={`relative flex items-center justify-center w-10 h-10 rounded-[15px] border transition-all duration-300 active:scale-95 group overflow-hidden ${
+          isDark
+            ? "bg-[#1C1C1E] text-[#EBEBF5] border-[#647DA1]/15 hover:bg-[#252529]"
+            : "bg-white text-[#1A2B4C] border-stone-200/60 hover:bg-stone-50 hover:text-black"
+        }`}
+      >
+        {/* أيقونة الشمس (تظهر في الوضع الليلي للتحويل للنهاري) */}
+        <svg
+          className={`w-5 h-5 absolute transition-all duration-500 ease-out transform ${
+            isDark 
+              ? "scale-100 rotate-0 opacity-100" 
+              : "scale-0 -rotate-90 opacity-0"
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m2.828 5.657a4 4 0 118 0 4 4 0 01-8 0z"
+          />
+        </svg>
+
+        {/* أيقونة القمر (تظهر في الوضع النهاري للتحويل لليلي) */}
+        <svg
+          className={`w-5 h-5 absolute transition-all duration-500 ease-out transform ${
+            isDark 
+              ? "scale-0 rotate-90 opacity-0" 
+              : "scale-100 rotate-0 opacity-100"
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          />
+        </svg>
+      </button>
+    </div>
 
         </div>
       </header>
@@ -304,7 +341,7 @@ export default function App() {
               className={`text-base sm:text-[21px] font-bold leading-[1.8] text-center px-4 transition-colors duration-300 ${isDark ? "text-[#EBEBF5]" : "text-[#1A2B4C]"}`}
               style={{ fontFamily: "'Tajawal', sans-serif" }}
             >
-              "نسأل الله أن نكون وُفّقنا في أن نجعل استماعك للعلم سهلًا ميسّرًا، صافيًا من كل شاغل. ونسأله سبحانه القبول والإخلاص"
+              "نسأل الله أن نكون وُفّقنا في أن نجعل استماعك للعلم سهلًا ميسّرًا، صافيًا من كل شاغل، ونسأله سبحانه القبول والإخلاص"
             </p>
             <div className={`h-0.5 w-16 mx-auto mt-8 rounded-full transition-colors duration-300 ${isDark ? "bg-[#647DA1]/20" : "bg-[#1A2B4C]/20"}`} />
           </div>
@@ -333,7 +370,7 @@ export default function App() {
 
             {/* Link Directory columns replaced with Suggestions & Complaints Feedback Module */}
             <div id="contact" className="md:col-span-8 md:mr-10 text-right">
-              <div className={`rounded-3xl p-6 sm:p-8 border transition-all duration-300 ${isDark ? "bg-[#1C1C1E] border-stone-800/80" : "bg-stone-50 border-stone-100/80"}`}>
+              <div className={`rounded-3xl p-6 sm:p-8 transition-all duration-300 ${isDark ? " border-stone-800/80" : " border-stone-100/80"}`}>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                   <div>
                     <h4 className={`text-base font-bold mb-1 ${isDark ? "text-[#EBEBF5]" : "text-[#111113]"}`}>الشكاوى والمقترحات</h4>
@@ -409,9 +446,7 @@ export default function App() {
                       disabled={!subject.trim() || !messageText.trim()}
                       className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md shadow-emerald-500/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                     >
-                      <svg className="w-4.5 h-4.5 fill-current ml-1" viewBox="0 0 24 24">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.009-.002-3.98-.51-5.734-1.482L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.623-1.011-5.09-2.855-6.938C16.638 2.02 14.17 1 11.545 1 6.112 1 1.689 5.367 1.685 10.797c-.001 1.701.464 3.363 1.346 4.825l-.946 3.454 3.562-.924z" stroke="none" />
-                      </svg>
+                      
                       <span>إرسال عبر الواتساب</span>
                     </button>
                   </div>
