@@ -1,4 +1,3 @@
-2"}
 # Istaqim
 
 Istaqim is a platform dedicated to serving students of Islamic knowledge through modern digital tools, organized educational resources, and a focused learning experience.
