@@ -1,0 +1,24 @@
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[redirects]]
+  from = "/lesson/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/works"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/audio"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
