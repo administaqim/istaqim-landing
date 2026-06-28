@@ -58,7 +58,7 @@ const GooglePlayButton = ({ isDark }: DownloadButtonProps) => (
 
 export function DownloadButtonsSection({ isDark }: DownloadButtonProps) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex w-full flex-col sm:flex-row items-center gap-4">
       <AppStoreButton isDark={isDark} />
       <GooglePlayButton isDark={isDark} />
     </div>
