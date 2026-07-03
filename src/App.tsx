@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DownloadButtonsSection } from "./components/DownloadButtonsSection";
 import PhoneMockup from "./components/PhoneMockup";
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
