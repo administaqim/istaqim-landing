@@ -33,7 +33,10 @@ export default function App() {
   };
 // عرض صفحة سياسة الخصوصية إذا كان المسار /privacy
 if (typeof window !== "undefined" && window.location.pathname === '/privacy') {
-  return <PrivacyPolicy isDark={isDark} />;
+return <PrivacyPolicy isDark={isDark} />;
+// عرض صفحة سياسة الخصوصية فقط للاختبار
+return <PrivacyPolicy isDark={isDark} />;
+  
 }
   return (
     <div
