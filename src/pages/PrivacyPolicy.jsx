@@ -1,61 +1,109 @@
 import { useEffect } from 'react';
-import styles from './PrivacyPolicy.module.css';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({ isDark }) => {
   const lastUpdate = '2026-07-01';
 
   useEffect(() => {
     document.title = 'سياسة الخصوصية - منصة الاستقامة';
-    // تحديث وسم الوصف للصفحة (اختياري)
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', 'سياسة الخصوصية لمنصة الاستقامة. تعرف على كيفية تعامل التطبيق مع بياناتك.');
     }
   }, []);
 
+  const styles = {
+    container: {
+      maxWidth: '800px',
+      margin: '40px auto',
+      padding: '0 20px',
+      fontFamily: "'Tajawal', 'Segoe UI', sans-serif",
+      color: isDark ? '#e0e0e0' : '#1a1a1a',
+      lineHeight: '1.8',
+      direction: 'rtl',
+      textAlign: 'right',
+    },
+    title: {
+      fontSize: '2rem',
+      fontWeight: 700,
+      marginBottom: '8px',
+      color: isDark ? '#e0e0e0' : '#2d4a32',
+      textAlign: 'center',
+    },
+    sectionTitle: {
+      fontSize: '1.4rem',
+      fontWeight: 600,
+      color: isDark ? '#81c784' : '#2d4a32',
+      borderBottom: `2px solid ${isDark ? '#333' : '#e0e0d0'}`,
+      paddingBottom: '8px',
+      marginBottom: '20px',
+    },
+    contactBox: {
+      background: isDark ? '#1f1f1f' : '#f8f9f2',
+      border: `1px solid ${isDark ? '#333' : '#e0e0d0'}`,
+      borderRadius: '12px',
+      padding: '20px',
+      margin: '25px 0 20px',
+      textAlign: 'right',
+    },
+    link: {
+      color: isDark ? '#81c784' : '#2d6a4f',
+      textDecoration: 'none',
+      fontWeight: 500,
+    },
+    meta: {
+      fontSize: '0.9rem',
+      color: '#666',
+    },
+    section: {
+      margin: '40px 0',
+    },
+    ul: {
+      listStyleType: 'disc',
+      paddingRight: '25px',
+      margin: '15px 0',
+    },
+    li: {
+      marginBottom: '12px',
+    },
+  };
+
+  const Section = ({ title, children }) => (
+    <section style={styles.section}>
+      <h2 style={styles.sectionTitle}>{title}</h2>
+      {children}
+    </section>
+  );
+
   return (
-    <main className={styles.container}>
-      <article className={styles.policyWrapper}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>سياسة الخصوصية لمنصة الاستقامة</h1>
-          <p className={styles.meta}>
+    <main style={styles.container}>
+      <article>
+        <header style={{ marginBottom: '40px', textAlign: 'center' }}>
+          <h1 style={styles.title}>سياسة الخصوصية لمنصة الاستقامة</h1>
+          <p style={styles.meta}>
             آخر تحديث: {lastUpdate} &nbsp;|&nbsp; تاريخ النفاذ: {lastUpdate}
           </p>
         </header>
 
-        <section className={styles.intro}>
+        <section>
           <p>مرحبًا بكم في منصة الاستقامة.</p>
-          <p>
-            تحرص منصة الاستقامة على احترام خصوصية مستخدميها، وتلتزم بحماية
-            بياناتهم والتعامل معها بمسؤولية وشفافية، وفقًا لما تقتضيه أفضل
-            الممارسات التقنية والأنظمة ذات العلاقة.
-          </p>
-          <p>
-            وتوضح هذه السياسة كيفية تعامل التطبيق مع البيانات والمعلومات
-            المتعلقة باستخدامه، والحقوق المتاحة للمستخدمين، والإجراءات المتبعة
-            لحماية تلك البيانات.
-          </p>
-          <p>
-            يرجى قراءة هذه السياسة بعناية قبل استخدام التطبيق، ويُعد استمرار
-            استخدام التطبيق موافقةً على ما ورد فيها، وذلك في حدود الأنظمة
-            والقوانين المعمول بها.
-          </p>
-          <div className={styles.contactBox}>
+          <p>تحرص منصة الاستقامة على احترام خصوصية مستخدميها، وتلتزم بحماية بياناتهم والتعامل معها بمسؤولية وشفافية، وفقًا لما تقتضيه أفضل الممارسات التقنية والأنظمة ذات العلاقة.</p>
+          <p>وتوضح هذه السياسة كيفية تعامل التطبيق مع البيانات والمعلومات المتعلقة باستخدامه، والحقوق المتاحة للمستخدمين، والإجراءات المتبعة لحماية تلك البيانات.</p>
+          <p>يرجى قراءة هذه السياسة بعناية قبل استخدام التطبيق، ويُعد استمرار استخدام التطبيق موافقةً على ما ورد فيها، وذلك في حدود الأنظمة والقوانين المعمول بها.</p>
+          <div style={styles.contactBox}>
             <p><strong>الجهة المسؤولة عن التطبيق:</strong> منصة الاستقامة</p>
-            <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p>
-            <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p>
+            <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app" style={styles.link}>info@istaqim.app</a></p>
+            <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer" style={styles.link}>https://istaqim.app</a></p>
           </div>
         </section>
 
-        {/* باقي الأقسام بنفس الطريقة مع مكون Section */}
         <Section title="أولًا: التعريفات">
           <p>لأغراض هذه السياسة، يكون للمصطلحات الآتية المعاني المبينة أمام كل منها، ما لم يقتض السياق خلاف ذلك:</p>
-          <ul>
-            <li><strong>المنصة:</strong> منصة الاستقامة، ويشمل ذلك التطبيق والموقع الإلكتروني والخدمات التابعة لهما.</li>
-            <li><strong>التطبيق:</strong> تطبيق الاستقامة المخصص للأجهزة الذكية.</li>
-            <li><strong>المستخدم:</strong> كل شخص يستخدم التطبيق أو أيًا من خدماته.</li>
-            <li><strong>البيانات الشخصية:</strong> كل معلومة يمكن أن تؤدي، بصورة مباشرة أو غير مباشرة، إلى التعرف على هوية المستخدم.</li>
-            <li><strong>البيانات التقنية:</strong> البيانات التي تنتج عن استخدام التطبيق أو الاتصال بالشبكة، مثل عنوان بروتوكول الإنترنت (IP) أو معلومات الاتصال اللازمة لتقديم الخدمة.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}><strong>المنصة:</strong> منصة الاستقامة، ويشمل ذلك التطبيق والموقع الإلكتروني والخدمات التابعة لهما.</li>
+            <li style={styles.li}><strong>التطبيق:</strong> تطبيق الاستقامة المخصص للأجهزة الذكية.</li>
+            <li style={styles.li}><strong>المستخدم:</strong> كل شخص يستخدم التطبيق أو أيًا من خدماته.</li>
+            <li style={styles.li}><strong>البيانات الشخصية:</strong> كل معلومة يمكن أن تؤدي، بصورة مباشرة أو غير مباشرة، إلى التعرف على هوية المستخدم.</li>
+            <li style={styles.li}><strong>البيانات التقنية:</strong> البيانات التي تنتج عن استخدام التطبيق أو الاتصال بالشبكة، مثل عنوان بروتوكول الإنترنت (IP) أو معلومات الاتصال اللازمة لتقديم الخدمة.</li>
           </ul>
         </Section>
 
@@ -68,20 +116,20 @@ const PrivacyPolicy = () => {
           <p>تلتزم منصة الاستقامة بمبدأ تقليل جمع البيانات، فلا يجمع التطبيق إلا ما يلزم لتقديم الخدمة.</p>
           <p>في الإصدار الحالي، لا يتطلب التطبيق إنشاء حساب أو تسجيل دخول، ويمكن استخدامه دون تقديم بيانات شخصية لإنشاء حساب.</p>
           <p>ويقوم التطبيق بحفظ البيانات الآتية محليًا على جهاز المستخدم فقط:</p>
-          <ul>
-            <li>الاسم الذي يدخله المستخدم داخل التطبيق.</li>
-            <li>قائمة المواد التي يضيفها إلى المفضلة.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}>الاسم الذي يدخله المستخدم داخل التطبيق.</li>
+            <li style={styles.li}>قائمة المواد التي يضيفها إلى المفضلة.</li>
           </ul>
           <p>وتبقى هذه البيانات محفوظة داخل جهاز المستخدم، ولا يتم إرسالها إلى خوادم منصة الاستقامة في الإصدار الحالي.</p>
           <p>كما أن التطبيق:</p>
-          <ul>
-            <li>لا يستخدم أدوات تحليل الاستخدام (Analytics).</li>
-            <li>لا يستخدم أدوات تتبع المستخدمين.</li>
-            <li>لا يعرض إعلانات.</li>
-            <li>لا يجمع بيانات الموقع الجغرافي.</li>
-            <li>لا يجمع جهات الاتصال.</li>
-            <li>لا يجمع الصور أو الملفات.</li>
-            <li>لا يجمع الميكروفون أو الكاميرا.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}>لا يستخدم أدوات تحليل الاستخدام (Analytics).</li>
+            <li style={styles.li}>لا يستخدم أدوات تتبع المستخدمين.</li>
+            <li style={styles.li}>لا يعرض إعلانات.</li>
+            <li style={styles.li}>لا يجمع بيانات الموقع الجغرافي.</li>
+            <li style={styles.li}>لا يجمع جهات الاتصال.</li>
+            <li style={styles.li}>لا يجمع الصور أو الملفات.</li>
+            <li style={styles.li}>لا يجمع الميكروفون أو الكاميرا.</li>
           </ul>
           <p>وللضرورة التشغيلية، قد تتم معالجة بعض البيانات التقنية المؤقتة، مثل عنوان بروتوكول الإنترنت (IP)، أثناء الاتصال بالخادم وتحميل المحتوى، ويكون ذلك لغرض تقديم الخدمة فقط، دون تخزينها بصورة دائمة، أو ربطها بهوية المستخدم، أو استخدامها في إنشاء ملفات تعريف أو تتبع نشاطه.</p>
         </Section>
@@ -89,24 +137,24 @@ const PrivacyPolicy = () => {
         <Section title="رابعًا: الغرض من معالجة البيانات">
           <p>تتم معالجة البيانات الواردة في هذه السياسة بالقدر اللازم لتشغيل التطبيق وتقديم خدماته وتحسين تجربة الاستخدام.</p>
           <p>وتستخدم البيانات المحفوظة محليًا للأغراض الآتية:</p>
-          <ul>
-            <li>حفظ اسم المستخدم داخل التطبيق.</li>
-            <li>حفظ قائمة المفضلة.</li>
-            <li>تخصيص تجربة الاستخدام.</li>
-            <li>المحافظة على تفضيلات المستخدم بين جلسات الاستخدام.</li>
-            <li>ضمان استمرارية عمل بعض وظائف التطبيق.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}>حفظ اسم المستخدم داخل التطبيق.</li>
+            <li style={styles.li}>حفظ قائمة المفضلة.</li>
+            <li style={styles.li}>تخصيص تجربة الاستخدام.</li>
+            <li style={styles.li}>المحافظة على تفضيلات المستخدم بين جلسات الاستخدام.</li>
+            <li style={styles.li}>ضمان استمرارية عمل بعض وظائف التطبيق.</li>
           </ul>
           <p>ولا تستخدم هذه البيانات لأي أغراض تسويقية أو دعائية أو إعلانية.</p>
         </Section>
 
         <Section title="خامسًا: مشاركة البيانات">
           <p>تلتزم منصة الاستقامة بالحفاظ على خصوصية المستخدمين، ولذلك:</p>
-          <ul>
-            <li>لا تبيع البيانات الشخصية.</li>
-            <li>لا تؤجر البيانات.</li>
-            <li>لا ترخص البيانات للغير.</li>
-            <li>لا تتاجر بالبيانات بأي صورة.</li>
-            <li>لا تشارك البيانات الشخصية مع أي طرف خارجي لأغراض تجارية أو إعلانية.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}>لا تبيع البيانات الشخصية.</li>
+            <li style={styles.li}>لا تؤجر البيانات.</li>
+            <li style={styles.li}>لا ترخص البيانات للغير.</li>
+            <li style={styles.li}>لا تتاجر بالبيانات بأي صورة.</li>
+            <li style={styles.li}>لا تشارك البيانات الشخصية مع أي طرف خارجي لأغراض تجارية أو إعلانية.</li>
           </ul>
           <p>ولا يتم الإفصاح عن أي بيانات إلا إذا كان ذلك واجبًا بموجب الأنظمة أو الأوامر القضائية أو لحماية الحقوق المشروعة للمنصة أو مستخدميها، وذلك في الحدود التي يجيزها النظام.</p>
         </Section>
@@ -131,12 +179,12 @@ const PrivacyPolicy = () => {
         <Section title="تاسعًا: حقوق المستخدم">
           <p>تحرص منصة الاستقامة على احترام حقوق المستخدم المتعلقة ببياناته.</p>
           <p>ويجوز للمستخدم، وفقًا لما تسمح به خصائص التطبيق والأنظمة المعمول بها:</p>
-          <ul>
-            <li>حذف البيانات المحفوظة داخل التطبيق.</li>
-            <li>إزالة التطبيق في أي وقت.</li>
-            <li>طلب الاستفسار عن هذه السياسة.</li>
-            <li>التواصل مع المنصة بشأن أي استفسار يتعلق بالخصوصية.</li>
-            <li>طلب حذف أي بيانات قد تحتفظ بها المنصة مستقبلًا إذا أصبحت هذه الخدمة متاحة.</li>
+          <ul style={styles.ul}>
+            <li style={styles.li}>حذف البيانات المحفوظة داخل التطبيق.</li>
+            <li style={styles.li}>إزالة التطبيق في أي وقت.</li>
+            <li style={styles.li}>طلب الاستفسار عن هذه السياسة.</li>
+            <li style={styles.li}>التواصل مع المنصة بشأن أي استفسار يتعلق بالخصوصية.</li>
+            <li style={styles.li}>طلب حذف أي بيانات قد تحتفظ بها المنصة مستقبلًا إذا أصبحت هذه الخدمة متاحة.</li>
           </ul>
         </Section>
 
@@ -158,8 +206,8 @@ const PrivacyPolicy = () => {
 
         <Section title="الثالث عشر: التواصل معنا">
           <p>لأي استفسار أو ملاحظة أو طلب يتعلق بهذه السياسة أو بخصوصية البيانات، يمكن التواصل معنا عبر:</p>
-          <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p>
-          <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p>
+          <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app" style={styles.link}>info@istaqim.app</a></p>
+          <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer" style={styles.link}>https://istaqim.app</a></p>
         </Section>
 
         <Section title="الرابع عشر: أحكام عامة">
@@ -171,13 +219,5 @@ const PrivacyPolicy = () => {
     </main>
   );
 };
-
-// مكون صغير لعرض قسم بعنوان
-const Section = ({ title, children }) => (
-  <section className={styles.section}>
-    <h2 className={styles.sectionTitle}>{title}</h2>
-    {children}
-  </section>
-);
 
 export default PrivacyPolicy;
