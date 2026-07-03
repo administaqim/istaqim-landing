@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DownloadButtonsSection } from "./components/DownloadButtonsSection";
 import PhoneMockup from "./components/PhoneMockup";
-import PrivacyPolicy from './pages/PrivacyPolicy';
+
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -31,10 +31,6 @@ export default function App() {
     const encodedText = encodeURIComponent(formattedText);
     window.open(`https://wa.me/967773687374?text=${encodedText}`, "_blank");
   };
-
-// عرض صفحة سياسة الخصوصية إذا كان المسار /privacy
-if (typeof window !== "undefined" && window.location.pathname === '/privacy') {
-  return <PrivacyPolicy isDark={isDark} />;
 }
   
 }
