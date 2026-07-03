@@ -31,7 +31,10 @@ export default function App() {
     const encodedText = encodeURIComponent(formattedText);
     window.open(`https://wa.me/967773687374?text=${encodedText}`, "_blank");
   };
-
+// عرض صفحة سياسة الخصوصية إذا كان المسار /privacy
+if (typeof window !== "undefined" && window.location.pathname === '/privacy') {
+  return <PrivacyPolicy isDark={isDark} />;
+}
   return (
     <div
       className={`min-h-screen transition-colors duration-300 relative ${
