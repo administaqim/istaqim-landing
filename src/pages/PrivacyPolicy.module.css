@@ -1,0 +1,112 @@
+/* PrivacyPolicy.module.css */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: #e0e0e0;
+  }
+  .contactBox {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+  .sectionTitle {
+    color: #81c784;
+    border-bottom-color: #333;
+  }
+  a {
+    color: #81c784;
+  }
+}
+
+.policyWrapper {
+  background: transparent;
+}
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2d4a32;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contactBox {
+  background: #f8f9f2;
+  border: 1px solid #e0e0d0;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px 0 20px;
+  text-align: right;
+}
+
+.contactBox p {
+  margin: 5px 0;
+}
+
+.intro p {
+  margin-bottom: 16px;
+}
+
+.section {
+  margin: 40px 0;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d4a32;
+  border-bottom: 2px solid #e0e0d0;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-right: 25px;
+  margin: 15px 0;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+a {
+  color: #2d6a4f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+}
