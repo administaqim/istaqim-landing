@@ -31,11 +31,11 @@ export default function App() {
     const encodedText = encodeURIComponent(formattedText);
     window.open(`https://wa.me/967773687374?text=${encodedText}`, "_blank");
   };
+
 // عرض صفحة سياسة الخصوصية إذا كان المسار /privacy
 if (typeof window !== "undefined" && window.location.pathname === '/privacy') {
-return <PrivacyPolicy isDark={isDark} />;
-// عرض صفحة سياسة الخصوصية فقط للاختبار
-return <PrivacyPolicy isDark={isDark} />;
+  return <PrivacyPolicy isDark={isDark} />;
+}
   
 }
   return (
