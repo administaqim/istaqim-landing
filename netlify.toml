@@ -3,6 +3,11 @@
   [headers.values]
     Content-Type = "application/json"
 
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
 [[redirects]]
   from = "/lesson/*"
   to = "/index.html"

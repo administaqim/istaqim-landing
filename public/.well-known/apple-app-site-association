@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "M75Q7QW42S.com.istaqim.app",
+        "paths": ["/lesson/*", "/works", "/works*", "/audio", "/audio*"]
+      }
+    ]
+  }
+}
