@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.istaqim.app",
       "sha256_cert_fingerprints": [
-        "55:82:51:EE:08:B4:38:4A:B1:6B:71:BE:4B:DB:9A:44:F0:A6:B6:BD:A5:59:E5:94:17:DE:D8:E1:DF:AB:33:16"
+        "55:82:51:EE:08:B4:38:4A:B1:6B:71:BE:4B:DB:9A:44:F0:A6:B6:BD:A5:59:E5:94:17:DE:D8:E1:DF:AB:33:16",
+        "94:84:6A:07:4D:C9:4C:29:F7:DE:A0:0A:56:FF:23:77:74:57:3B:FF:38:FA:21:F4:2E:BA:7B:D5:78:CC:F4:6B"
       ]
     }
   }
