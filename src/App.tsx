@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { DownloadButtonsSection } from "./components/DownloadButtonsSection";
 import PhoneMockup from "./components/PhoneMockup";
 
-
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
@@ -31,9 +30,7 @@ export default function App() {
     const encodedText = encodeURIComponent(formattedText);
     window.open(`https://wa.me/967773687374?text=${encodedText}`, "_blank");
   };
-}
-  
-}
+
   return (
     <div
       className={`min-h-screen transition-colors duration-300 relative ${
